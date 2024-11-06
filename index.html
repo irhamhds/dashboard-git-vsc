@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTech User Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="card-title">DataTech User Management Dashboard</h1>
+
+            <!-- Error Alert -->
+            <div id="errorAlert" class="alert alert-error" style="display: none;"></div>
+
+            <!-- Loading -->
+            <div id="loading" class="loading"></div>
+
+            <!-- Main Content -->
+            <div id="mainContent" style="display: none;">
+                <!-- Form -->
+                <form id="userForm" class="form-grid">
+                    <div class="form-group">
+                        <input type="text" id="name" class="form-control" placeholder="Name">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" class="form-control" placeholder="Email">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="age" class="form-control" placeholder="Age">
+                        <span class="error-message" id="ageError"></span>
+                    </div>
+                    <div class="form-group">
+                        <select id="status" class="form-control">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Add User</button>
+                    </div>
+                </form>
+
+                <!-- Filters -->
+                <div class="filters">
+                    <select id="statusFilter" class="form-control">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+
+                <!-- Table -->
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th data-sort="name">Name ↕</th>
+                                <th data-sort="email">Email ↕</th>
+                                <th data-sort="age">Age ↕</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="feature.js"></script>
+</body>
+</html>
